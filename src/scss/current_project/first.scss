@@ -1,0 +1,34 @@
+.first {
+  .center {
+    @include width(1300);
+    .title {
+      position: relative;
+      h2, h3, p {
+        white-space: nowrap;
+      }
+      .black {
+        background: $h3-color;
+        color: $background-color;
+        padding: 4px 20px;
+        padding-top: 2px;
+        border-radius: 5px;
+      }
+      .mini {
+        font-weight: 300;
+        text-transform: lowercase;
+      }
+      .right {
+        text-align: right;
+      }
+      .custom-button {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
+    .logo {
+      @include width(416);
+    }
+
+  }
+}

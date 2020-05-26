@@ -1,0 +1,29 @@
+.second {
+  .center {
+    .first {
+      margin-top: RelativeUnits(80, 0.5);
+    }
+    .string {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include width(500, 0.5);
+      margin-bottom: 30px;
+
+      .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: RelativeUnits(64, 0.5);
+        height: RelativeUnits(64, 0.5);
+        border-radius: RelativeUnits(10, 0.5);
+        background: $black;
+        i {
+          color: $accent-1-color;
+          font-size: RelativeUnits(32, 0.5);
+        }
+      }
+      h3 { font-weight: 500; min-width: RelativeUnits(350, 0.5); }
+    }
+  }
+}
