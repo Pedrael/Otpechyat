@@ -23,8 +23,8 @@ html {
       }
       p, h2, h3, h4  {
       }
-      p, a {
-        @include FontLineSize(0.2, 0.2, 0.6, 20, 10);
+      p, a, input, textarea, button, select {
+        @include FontLineSize(0.3, 0.3, 0.4, 20, 10);
       }
       h2 {
         @include FontLineSize(0.5, 0.5, 0.0, 120, 8);

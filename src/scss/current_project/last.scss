@@ -1,0 +1,102 @@
+.last {
+  .center {
+
+    .form {
+      margin-top: RelativeUnits(80, 0.99);
+    }
+
+    .fields {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      position: relative;
+      @include width(529, 0.6);
+      .input, .select-input, .file-loader {
+        margin-bottom: RelativeUnits(30, 0.5);
+      }
+      .file-input {
+        width: 0.1px;
+        height: 0.1px;
+        z-index: -1;
+        position: absolute;
+      }
+      .input, .select-input {
+        width: 40%;
+        height: RelativeUnits(50, 0.8);
+        border: none;
+        border-bottom: 2px solid $accent-1-color;
+        color: $article-color;
+        background: transparent;
+        &:required {
+          box-shadow:none;
+        }
+        &:invalid {
+          //box-shadow:0 0 3px red;
+        }
+      }
+      .select-input {
+        // TODO: CUSTOMISATON
+      }
+      .big {
+        width: 100%;
+        margin-bottom: 0;
+      }
+      .file-loader {
+        width: 60%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        p {
+          color: #9d9298;
+          white-space: nowrap;
+          margin-right: 20px;
+        }
+        .wrap {
+          min-width: RelativeUnits(41, 0.5);
+          min-height: RelativeUnits(41, 0.5);
+          border-radius: 5px;
+          background: $article-color;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          i {
+            color: $accent-1-color;
+            font-size: RelativeUnits(24, 0.5);
+          }
+        }
+      }
+    }
+    .submit {
+      @include width(212, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+      p {
+        font-weight: 500;
+      }
+      p.big-price {
+        color: $accent-1-color;
+        @include FontLineSize(0.4, 0.4, 0.2, 40, 20);
+      }
+      .custom-button {
+        @include width(163, 0.6);
+        border: none;
+      }
+    }
+    .attachments {
+      @include width(529, 0.6);
+      margin-top: RelativeUnits(30, 0.5);
+      p.gray {
+        color: #9d9298;
+      }
+      i {
+        @include FontLineSize(0.3, 0.3, 0.4, 20, 10);
+        color: $article-color;
+        margin-right: 10px;
+        margin-left: -30px;
+      }
+    }
+  }
+}
