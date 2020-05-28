@@ -12,9 +12,30 @@
 
   </head>
   <body>
-    <aside class="sidebar">
-      <div class="i-group" id="group1">
+    <div class="warning">
+      <h2>переверни меня</h2>
+      <h3>я работаю только горизонтально!</h3>
+    </div>
+
+    <div class="progress-bar">
+      <div class="complete"></div>
+    </div>
+    <aside class="social-mobile">
+      <div class="i-group" id="group3">
         <div class="wrap">
+          <a href=""><i class="fab fa-viber"></i></a>
+        </div>
+        <div class="wrap">
+          <a href=""><i class="fab fa-telegram-plane"></i></a>
+        </div>
+        <div class="wrap">
+          <a href=""><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </aside>
+    <aside class="sidebar sidebar-hide">
+      <div class="i-group" id="group1">
+        <div class="wrap js-toggle-menu">
           <i class="fas fa-align-right"></i>
         </div>
       </div>
@@ -23,51 +44,59 @@
           <i class="far fa-lightbulb"></i>
           <p>выключить свет</p>
         </div>
-        <div class="wrap-w-t">
+        <div class="wrap-w-t js-list-item active" id="item0">
+          <i class="fas fa-user-alt"></i>
+          <p>главная</p>
+        </div>
+        <div class="wrap-w-t js-list-item" id="item1">
+          <i class="fas fa-phone"></i>
+          <p>контакты</p>
+        </div>
+        <div class="wrap-w-t js-list-item" id="item2">
           <i class="fas fa-star"></i>
-          <p>почему мы?</p>
+          <p>выберите нас</p>
+        </div>
+        <div class="wrap-w-t js-list-item" id="item3">
+          <i class="fas fa-shopping-cart"></i>
+          <p>сделать заказ</p>
         </div>
         <div class="wrap-w-t">
           <i class="fas fa-envelope"></i>
           <p>консультация</p>
         </div>
-        <div class="wrap-w-t active">
-          <i class="fas fa-shopping-cart"></i>
-          <p>сделать заказ</p>
-        </div>
       </div>
       <div class="i-group" id="group3">
         <div class="wrap">
-          <i class="fab fa-viber"></i>
+          <a href=""><i class="fab fa-viber"></i></a>
         </div>
         <div class="wrap">
-          <i class="fab fa-telegram-plane"></i>
+          <a href=""><i class="fab fa-telegram-plane"></i></a>
         </div>
         <div class="wrap">
-          <i class="fab fa-instagram"></i>
+          <a href=""><i class="fab fa-instagram"></i></a>
         </div>
       </div>
 
     </aside>
 
     <div class="navigator">
-      <i class="fas fa-chevron-left"></i>
+      <i class="fas fa-chevron-left control_prev"></i>
       <div class="square"></div>
-      <i class="fas fa-chevron-right"></i>
+      <i class="fas fa-chevron-right control_next"></i>
     </div>
 
     <header class="header">
       <p>otpechyat.by</p>
     </header>
 
-    <div class="main-container">
-      <section class="content first flex -a-i-c -j-c-c" style="display: none">
+    <div class="main-container owl-carousel" id="main-slider">
+      <section class="content first flex -a-i-c -j-c-c">
         <div class="center flex -j-c-b">
           <div class="title">
             <h3><span class="black">печатное агентство</span></h3>
             <h2><span class="mini">от</span>ПЕЧАТЬ</h2>
             <h3 class="right">- все будет в лучшем виде</h3>
-            <a href="" class="custom-button">заказать</a>
+            <div class="custom-button to-last">заказать</div>
           </div>
           <div class="logo">
             <img src="img/logo.svg" alt="">
@@ -75,7 +104,7 @@
         </div>
       </section>
 
-      <section class="content second flex -a-i-c -j-c-c" style="display: none">
+      <section class="content second flex -a-i-c -j-c-c">
         <div class="center flex -column -a-i-c">
           <h2>контакты</h2>
           <h3>звоните нам, мы работаем с <span class="green">9.00 до 18.00</span></h3>
@@ -100,7 +129,7 @@
         </div>
       </section>
 
-      <section class="content third flex -a-i-c -j-c-c" style="display: none">
+      <section class="content third flex -a-i-c -j-c-c">
         <div class="center">
           <h2>ваш выбор</h2>
           <h3><span class="green">выберите нас</span> и мы гарантируем прекрасный сервис</h3>

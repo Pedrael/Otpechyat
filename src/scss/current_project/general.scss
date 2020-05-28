@@ -24,14 +24,14 @@ html {
       p, h2, h3, h4  {
       }
       p, a, input, textarea, button, select {
-        @include FontLineSize(0.3, 0.3, 0.4, 20, 10);
+        @include FontLineSize(0.4, 0.4, 0.2, 20, 10);
       }
       h2 {
         @include FontLineSize(0.5, 0.5, 0.0, 120, 8);
 				text-transform: uppercase;
       }
       h3 {
-        @include FontLineSize(0.4, 0.4, 0.2, 30, 8);
+        @include FontLineSize(0.45, 0.45, 0.1, 30, 8);
 				font-weight: 400;
 				span.green {
 					background: $accent-1-color;
@@ -64,4 +64,42 @@ html {
 	border-radius: 10px;
 	text-transform: uppercase;
 	font-weight: 500;
+}
+.owl-item {
+	height: 100vh;
+}
+.progress-bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100vw;
+	height: RelativeUnits(16, 0.5);
+	background: transparent;
+	.complete {
+		height: 100%;
+		width: 25%;
+		background: $accent-1-color;
+	}
+}
+.warning {
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	position: fixed;
+	justify-content: center;
+	align-items: center;
+	background: $background-color;
+	z-index: 9999;
+	flex-direction: column;
+	display: none;
+	h3 {
+		font-size: 16px;
+	}
+}
+
+@mixin _phone-big-vertical {
+    @media (max-height: 480px){
+        @content;
+    }
 }

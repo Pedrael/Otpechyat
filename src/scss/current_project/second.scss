@@ -8,22 +8,22 @@
       justify-content: space-between;
       align-items: center;
       @include width(500, 0.5);
-      margin-bottom: 30px;
+      margin-bottom: RelativeUnits(30, 0.7);
 
       .wrap {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: RelativeUnits(64, 0.5);
-        height: RelativeUnits(64, 0.5);
-        border-radius: RelativeUnits(10, 0.5);
+        width: RelativeUnits(64, 0.7);
+        height: RelativeUnits(64, 0.7);
+        border-radius: RelativeUnits(10, 0.7);
         background: $black;
         i {
           color: $accent-1-color;
-          font-size: RelativeUnits(32, 0.5);
+          font-size: RelativeUnits(32, 0.7);
         }
       }
-      h3 { font-weight: 500; min-width: RelativeUnits(350, 0.5); }
+      h3 { font-weight: 500; min-width: RelativeUnits(350, 0.7); }
     }
   }
 }

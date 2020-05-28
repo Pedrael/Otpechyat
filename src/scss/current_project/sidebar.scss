@@ -1,6 +1,15 @@
 .sidebar {
+  top: 0;
+  right: 0;
+  #group3 {
+    @include _phone-big-vertical {
+      display: none;
+    }
+  }
+}
 
-  width: RelativeUnits(152, 1);
+.sidebar, .social-mobile {
+
   height: 100vh;
   max-height: 100vh;
   display: flex;
@@ -8,11 +17,9 @@
   justify-content: space-between;
   background: $article-color;
   position: absolute;
-  top: 0;
-  right: 0;
   z-index: 3;
   i {
-    font-size: RelativeUnits(24, 1);
+    font-size: RelativeUnitsComplex(24, 0.25, 0.25);
     color: $white;
   }
   .i-group {
@@ -22,7 +29,7 @@
     width: 100%;
     .wrap, .wrap-w-t {
       width: 100%;
-      height: RelativeUnits(72, 1);
+      height: RelativeUnitsComplex(72, 0.25, 0.25);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -35,26 +42,44 @@
       }
     }
     .wrap-w-t {
-      height: RelativeUnits(81, 1);
+      height: RelativeUnitsComplex(81, 0.25, 0.25);
       p {
-        //display: none;
         color: $white;
-        font-size: RelativeUnits(14, 1);
+        font-size: RelativeUnitsComplex(14, 0.25, 0.25);
         font-weight: 700;
         white-space: nowrap;
       }
     }
   }
   #group1 {
-    height: RelativeUnits(72, 1);
+    height: RelativeUnitsComplex(72, 0.25, 0.25);
   }
   #group2 {
-    height: RelativeUnits(370, 1);
+    height: RelativeUnitsComplex(486, 0.25, 0.25);
   }
   #group3 {
-    height: RelativeUnits(217, 1);
+    height: RelativeUnitsComplex(217, 0.25, 0.25);
     margin-bottom: 20px;
   }
+}
+
+.social-mobile {
+  top: 0;
+  left: 0;
+  width: RelativeUnitsComplex(72, 0.25, 0.25);
+  justify-content: center;
+  display: none;
+  @include _phone-big-vertical {
+    display: flex;
+  }
+}
+
+.sidebar-show {
+  width: RelativeUnitsComplex(152, 0.25, 0.25);
+}
+.sidebar-hide {
+  width: RelativeUnitsComplex(72, 0.25, 0.25);
+  p { display: none; }
 }
 
 .navigator {
@@ -68,9 +93,16 @@
   position: absolute;
   bottom: 10%;
   left: calc(50% - 68px);
+  z-index: 99;
+  @include _phone-big-vertical {
+    display: none;
+  }
   i {
     color: $white;
     font-size: 14px;
+    &:hover {
+      color: $accent-1-color;
+    }
   }
   .square {
     width: 11px;
