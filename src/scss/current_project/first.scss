@@ -1,8 +1,12 @@
 .first {
   .center {
     @include width(1300);
+    max-height: fit-content;
+    max-height: -moz-fit-content;
     .title {
       position: relative;
+      max-height: fit-content;
+      max-height: -moz-fit-content;
       h2, h3, p {
         white-space: nowrap;
       }
@@ -28,6 +32,8 @@
 
     .logo {
       @include width(416);
+      max-height: auto;
+      max-height: auto;
     }
 
   }

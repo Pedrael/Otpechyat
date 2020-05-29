@@ -1,0 +1,60 @@
+.darkmode {
+  p, a, input, textarea, button, select, h2, h3, h4 {
+    color: $background-color !important;
+  }
+  h3 {
+    span.green {
+      color: $article-color !important;
+    }
+  }
+  background: $article-color !important;
+
+  .sidebar, .social-mobile {
+    background: $background-color !important;
+    p, i {
+      color: $article-color !important;
+    }
+  }
+  .first {
+    .logo {
+      .white-logo { display: none !important; }
+      .black-logo { display: block !important; ; }
+    }
+  }
+
+  .second {
+    .wrap {
+      background: $accent-1-color !important;
+      i { color: $article-color !important; }
+    }
+  }
+
+  .last {
+    .select-selected {
+     color: $background-color !important;
+    }
+    .custom-button {
+      color: $article-color !important;
+    }
+    .file-loader {
+      .wrap {
+        background: $accent-1-color !important;
+        i { color: $article-color !important; }
+      }
+    }
+    .attachments {
+      i { color: $background-color !important; }
+    }
+  }
+
+  .popup {
+    textarea {
+      background: $article-color !important;
+    }
+    i, p, .popup-submit { color: $article-color !important; }
+  }
+
+  .warning {
+    background: $article-color !important;
+  }
+}

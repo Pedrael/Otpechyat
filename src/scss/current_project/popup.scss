@@ -1,0 +1,58 @@
+.popup {
+  position: absolute;
+  @include width(622, 0.5);
+  height: RelativeUnits(450, 0.5);
+  border-radius: RelativeUnits(21, 0.5);
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  top: calc(50vh - #{RelativeUnits(225, 0.5)});
+  left: calc(50vw - #{RelativeUnits(225, 0.5)});
+  z-index: 99;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  .title, textarea, .popup-submit {
+    width: 100%;
+    border: none;
+    resize: none;
+  }
+  .title, .popup-submit {
+    background: $accent-1-color;
+    height: RelativeUnits(66, 0.5);
+    font-size: RelativeUnits(18, 0.5);
+    text-transform: uppercase;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    padding: RelativeUnits(10, 0.5) RelativeUnits(40, 0.5);
+    i {
+      font-size: RelativeUnits(35, 0.5);
+      color: $article-color;
+      margin-right: RelativeUnits(20, 0.5);
+    }
+    p {
+      font-size: RelativeUnits(18, 0.5);
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+    p.gray {
+      font-size: RelativeUnits(16, 0.5);
+      line-height: normal;
+      font-weight: 500;
+      color: #9d9298;
+      text-transform: none;
+    }
+  }
+  textarea {
+    background: $background-color;
+    flex-grow: 1;
+    padding: 20px;
+    font-family: $ubuntu;
+  }
+  .popup-submit {
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+}

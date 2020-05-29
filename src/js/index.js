@@ -1,4 +1,5 @@
 import 'owl.carousel';
+require('./custom-select.js')
 
 $(document).ready(() => {
   ////////////////CAROUSEL/////////////////////////////////////////////////
@@ -57,6 +58,30 @@ $(document).ready(() => {
     }
   }
   showIfHorizontal()
-  window.addEventListener("resize", showIfHorizontal, {passive: true});
-  window.addEventListener("orientationchange", showIfHorizontal, {passive: true});
+  window.addEventListener("resize", showIfHorizontal, {passive: true})
+  window.addEventListener("orientationchange", showIfHorizontal, {passive: true})
+  ///////////////TOGGLE POPUP//////////////////////////////////////////////////////
+  $('.js-toggle-popup').click(() => {
+    var element = document.querySelector(".js-toggle-popup")
+    if(element.classList.contains('active')) {
+      $('.popup').css('display', 'none')
+      $('.js-toggle-popup').removeClass('active')
+    }
+    else {
+      $('.popup').css('display', 'flex')
+      $('.js-toggle-popup').addClass('active')
+    }
+  })
+  ////////////////DARKMODE////////////////////////////////////////////////////////
+  $('.js-toggle-light').click(() => {
+    var element = document.querySelector(".js-toggle-light")
+    if(element.classList.contains('active')) {
+      $('body').removeClass('darkmode')
+      $('.js-toggle-light').removeClass('active')
+    }
+    else {
+      $('body').addClass('darkmode')
+      $('.js-toggle-light').addClass('active')
+    }
+  })
 })

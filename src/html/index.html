@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="i-group" id="group2">
-        <div class="wrap-w-t">
+        <div class="wrap-w-t js-toggle-light">
           <i class="far fa-lightbulb"></i>
           <p>выключить свет</p>
         </div>
@@ -60,7 +60,7 @@
           <i class="fas fa-shopping-cart"></i>
           <p>сделать заказ</p>
         </div>
-        <div class="wrap-w-t">
+        <div class="wrap-w-t js-toggle-popup">
           <i class="fas fa-envelope"></i>
           <p>консультация</p>
         </div>
@@ -89,6 +89,18 @@
       <p>otpechyat.by</p>
     </header>
 
+    <form class="popup">
+      <div class="title">
+        <i class="fas fa-comments"></i>
+        <div class="title-text">
+          <p>Задайте ваш вопрос</p>
+          <p class="gray">и мы вам ответим</p>
+        </div>
+      </div>
+      <textarea name="message" required="required"></textarea>
+      <button type="submit" class="popup-submit">отправить</button>
+    </form>
+
     <div class="main-container owl-carousel" id="main-slider">
       <section class="content first flex -a-i-c -j-c-c">
         <div class="center flex -j-c-b">
@@ -99,7 +111,8 @@
             <div class="custom-button to-last">заказать</div>
           </div>
           <div class="logo">
-            <img src="img/logo.svg" alt="">
+            <img src="img/logo.svg" alt="" class="white-logo">
+            <img src="img/logo-white.svg" alt="" class="black-logo">
           </div>
         </div>
       </section>
@@ -162,7 +175,7 @@
           <h3><span class="green">сделайте ваш заказ</span> и мы с радостью выполним его</h3>
           <form action="" class="form flex">
             <div class="fields">
-      				<input class="input" type="text" id="amount" name="amount" required="required" placeholder="Количество страниц...">
+      				<input class="input" type="number" id="amount" name="amount" required="required" placeholder="Количество страниц..." min="1">
               <div class="file-loader">
                 <p>Загрузите документ</p>
                 <input type="file" name="file" id="file" class="file-input">
@@ -171,22 +184,31 @@
                 </label>
               </div>
               <input class="input" type="name" id="name" name="name" required="required" placeholder="Как к Вам обращаться?">
-              <select class="select-input" name="styling">
-                <option value="none" selected>Оформление</option>
-                <option value="styling1">styling1</option>
-                <option value="styling2">styling2</option>
-              </select>
-              <select class="select-input" name="coloring">
-                <option value="none" selected>Цветность</option>
-                <option value="RGB">RGB</option>
-                <option value="HSL">HSL</option>
-              </select>
-              <select class="select-input" name="format">
-                <option value="none" selected>Формат печати</option>
-                <option value="A4">A4</option>
-                <option value="A3">A3</option>
-              </select>
-              <input class="input big" type="text" id="amount" name="amount" required="required" placeholder="Количество страниц...">
+
+              <div class="custom-select">
+                <select class="" name="styling">
+                  <option value="none" selected>Оформление</option>
+                  <option value="styling1">styling1</option>
+                  <option value="styling2">styling2</option>
+                </select>
+              </div>
+
+              <div class="custom-select">
+                <select class="" name="coloring">
+                  <option value="none" selected>Цветность</option>
+                  <option value="RGB">RGB</option>
+                  <option value="HSL">HSL</option>
+                </select>
+              </div>
+
+              <div class="custom-select">
+                <select class="" name="format">
+                  <option value="none" selected>Формат печати</option>
+                  <option value="A4">A4</option>
+                  <option value="A3">A3</option>
+                </select>
+              </div>
+              <input class="input big" type="text" id="comment" name="comment" required="required" placeholder="Введите комментарий к заказу...">
 
             </div>
             <div class="submit">
