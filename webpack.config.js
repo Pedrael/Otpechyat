@@ -90,6 +90,10 @@ module.exports = {
       {
         from: './src/img',
         to: './img'
+      },
+      {
+        from: './src/server',
+        to: './server'
       }
     ]),
   ].concat(htmlPlugins),

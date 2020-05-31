@@ -84,4 +84,6 @@ $(document).ready(() => {
       $('.js-toggle-light').addClass('active')
     }
   })
+  //////////////////////PRICE COUNT//////////////////////////////////////////////
+
 })

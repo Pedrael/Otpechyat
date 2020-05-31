@@ -8,7 +8,12 @@ for (i = 0; i < l; i++) {
   /* For each element, create a new DIV that will act as the selected item: */
   a = document.createElement("DIV");
   a.setAttribute("class", "select-selected");
-  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  if(selElmnt.options[selElmnt.selectedIndex].innerHTML.length > 15) {
+    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML.substring(0, 15)+"...";
+  }
+  else {
+    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML
+  }
   x[i].appendChild(a);
   /* For each element, create a new DIV that will contain the option list: */
   b = document.createElement("DIV");
@@ -18,6 +23,7 @@ for (i = 0; i < l; i++) {
     create a new DIV that will act as an option item: */
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
+
     c.addEventListener("click", function(e) {
         /* When an item is clicked, update the original select box,
         and the selected item: */
@@ -25,10 +31,19 @@ for (i = 0; i < l; i++) {
         s = this.parentNode.parentNode.getElementsByTagName("select")[0];
         sl = s.length;
         h = this.parentNode.previousSibling;
+        var input_selected = h.parentNode.children[0];
+        input_selected.value = this.innerHTML
+        //console.log(input_selected)
         for (i = 0; i < sl; i++) {
           if (s.options[i].innerHTML == this.innerHTML) {
             s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
+            if(this.innerHTML.length > 15) {
+              h.innerHTML = this.innerHTML.substring(0, 15)+"...";
+            }
+            else {
+              h.innerHTML = this.innerHTML
+            }
+
             y = this.parentNode.getElementsByClassName("same-as-selected");
             yl = y.length;
             for (k = 0; k < yl; k++) {
@@ -40,6 +55,7 @@ for (i = 0; i < l; i++) {
         }
         h.click();
     });
+    c.addEventListener('click', countPrice)
     b.appendChild(c);
   }
   x[i].appendChild(b);
@@ -78,3 +94,65 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+var amount_selected = document.getElementById('amount')
+var styling_selected = document.getElementById('styling-selected')
+var coloring_selected = document.getElementById('coloring-selected')
+var format_selected = document.getElementById('format-selected')
+var type_selected = document.getElementById('type-selected')
+var styling = document.getElementById('styling')
+var coloring = document.getElementById('coloring')
+var format = document.getElementById('format')
+var type = document.getElementById('type')
+var total_input = document.getElementById('total')
+
+amount_selected.addEventListener('change', (e)=>{ countPrice() })
+
+function countPrice() {
+
+  var price = parseFloat(0)
+  var colored
+  var sides
+  var format_price
+  var styling_price
+  var n = parseInt(amount_selected.value)
+
+
+  Array.from(coloring.options).forEach((element) => {
+    if(element.value == coloring_selected.value) {
+      colored = element.dataset.colored
+      //console.log(colored)
+    }
+  })
+
+  Array.from(type.options).forEach((element) => {
+    if(element.value == type_selected.value) {
+      sides = parseInt(element.dataset.sides)
+      //console.log(sides)
+    }
+  })
+
+  Array.from(format.options).forEach((element) => {
+    if(element.value == format_selected.value) {
+      if(colored=='true') format_price = parseFloat(element.dataset.colored)
+      if(colored=='false') format_price = parseFloat(element.dataset.black)
+      //console.log(format_price, element.dataset.colored, element.dataset.black, colored)
+    }
+  })
+
+  Array.from(styling.options).forEach((element) => {
+    if(element.value == styling_selected.value) {
+       styling_price = parseFloat(element.dataset.price)
+    }
+  })
+
+    if(colored != undefined && sides != undefined && format_price != undefined && n != undefined) {
+      price += Math.round((( format_price * n ) + styling_price) * 100)/100
+    }
+    console.log(format_price, n, styling_price)
+
+  var summary = document.getElementById('big-price')
+  summary.innerHTML = price + ' р'
+  total_input.value = price
+}
+
+countPrice()

@@ -1,0 +1,8 @@
+{
+    "name": "user/otpechyat_server",
+    "description": "none",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.1"
+    }
+}
