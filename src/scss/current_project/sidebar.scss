@@ -66,6 +66,9 @@
           color: $black;
         }
       }
+      &.toggled-light {
+        //i { color: $accent-1-color !important; }
+      }
     }
     .wrap-w-t {
       height: RelativeUnitsComplex(81, 0.25, 0.25);

@@ -87,13 +87,17 @@ $(document).ready(() => {
   ////////////////DARKMODE////////////////////////////////////////////////////////
   $('.js-toggle-light').click(() => {
     var element = document.querySelector(".js-toggle-light")
-    if(element.classList.contains('active')) {
+    if(element.classList.contains('toggled-light')) {
       $('body').removeClass('darkmode')
-      $('.js-toggle-light').removeClass('active')
+      $('.js-toggle-light').removeClass('toggled-light')
+      $('.fa-lightbulb').removeClass('fas')
+      $('.fa-lightbulb').addClass('far')
     }
     else {
       $('body').addClass('darkmode')
-      $('.js-toggle-light').addClass('active')
+      $('.js-toggle-light').addClass('toggled-light')
+      $('.fa-lightbulb').removeClass('far')
+      $('.fa-lightbulb').addClass('fas')
     }
   })
   //////////////////////PRICE COUNT//////////////////////////////////////////////
