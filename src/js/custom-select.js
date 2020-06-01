@@ -68,6 +68,10 @@ for (i = 0; i < l; i++) {
     this.classList.toggle("select-arrow-active");
   });
 }
+function shortenString(str, n) {
+  if(str.length > n) return str.substring(0, 15) + "..."
+  return str
+}
 
 function closeAllSelect(elmnt) {
   /* A function that will close all select boxes in the document,
