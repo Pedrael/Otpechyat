@@ -10,14 +10,19 @@
       flex-wrap: wrap;
       justify-content: space-between;
       position: relative;
+      *:nth-last-child(-n+2) {
+        margin-bottom: 0;
+      }
       @include width(529, 0.65);
       .input, .select-input, .file-loader {
         margin-bottom: RelativeUnits(30, 0.5);
       }
       .file-input {
-        width: 0.1px;
-        height: 0.1px;
-        z-index: -1;
+        width: 0px;
+        height: 0px;
+        z-index: -100;
+        border: none;
+        background: transparent;
         position: absolute;
       }
       .input, .select-input {
@@ -89,6 +94,7 @@
       }
     }
     .attachments {
+      display: none;
       @include width(529, 0.65);
       margin-top: RelativeUnits(30, 0.5);
       p.gray {

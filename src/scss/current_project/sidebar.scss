@@ -9,28 +9,20 @@
 }
 
   @keyframes blup {
-    1% {
-      border-radius: 50%;
-    }
     25% {
-      background: $accent-1-color;
+      background: rgba(82, 228, 176, 0.5);
     }
     100% {
-      border-radius: 0%;
-      background: $accent-1-color;
+      background: rgba(82, 228, 176, 1);
     }
   }
 
   @-webkit-keyframes blup {
-    1% {
-      border-radius: 20%;
-    }
     25% {
-      background: $accent-1-color;
+      background: rgba(82, 228, 176, 0.5);
     }
     100% {
-      border-radius: 0%;
-      background: $accent-1-color;
+      background: rgba(82, 228, 176, 1);
     }
   }
 

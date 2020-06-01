@@ -63,12 +63,24 @@ $(document).ready(() => {
   ///////////////TOGGLE POPUP//////////////////////////////////////////////////////
   $('.js-toggle-popup').click(() => {
     var element = document.querySelector(".js-toggle-popup")
+    $('.popup').toggleClass('animate');
     if(element.classList.contains('active')) {
       $('.popup').css('display', 'none')
       $('.js-toggle-popup').removeClass('active')
     }
     else {
       $('.popup').css('display', 'flex')
+      //$('.popup').css('transform', 'scale(0.1)')
+    /*  $('.popup').css('borderSpacing', 0).animate(
+         {
+           borderSpacing: 1
+         },
+         {
+         step: function(now,fx) {
+           $(this).css('transform','scale('+now+')');
+         },
+         duration:'slow'
+       });*/
       $('.js-toggle-popup').addClass('active')
     }
   })
