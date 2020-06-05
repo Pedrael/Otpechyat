@@ -79,7 +79,7 @@
 
     </aside>
 
-    <div class="navigator">
+    <div class="navigator z-index" id="navigator">
       <i class="fas fa-chevron-left control_prev"></i>
       <div class="square"></div>
       <i class="fas fa-chevron-right control_next"></i>
@@ -148,23 +148,23 @@
           <h3><span class="green">выберите нас</span> и мы гарантируем прекрасный сервис</h3>
           <div class="line first">
             <div class="square"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed </p>
+            <p>Печать всех видов студенческих работ</p>
           </div>
           <div class="line">
             <div class="square"></div>
-            <p>ut labore et dolore magna aliqua. Ut enim ad minim </p>
+            <p>Брошюровка документов</p>
           </div>
           <div class="line">
             <div class="square"></div>
-            <p>laboris nisi ut aliquip ex ea commodo consequat</p>
+            <p>Проверка и оформление электронных документов согласно СТП</p>
           </div>
           <div class="line">
             <div class="square"></div>
-            <p>Duis aute irure dolor in reprehenderit</p>
+            <p>Полная укомплектовка работ</p>
           </div>
           <div class="line">
             <div class="square"></div>
-            <p>laboris nisi ut aliquip ex ea commodo consequat</p>
+            <p>Доставка на дом или прямо в ВУЗ</p>
           </div>
         </div>
       </section>
@@ -198,10 +198,10 @@
                 <input type="text" hidden name="styling-selected" id="styling-selected">
                 <select class="" name="styling" id="styling">
                   <option value="none" selected>Оформление</option>
-                  <option value="папка скоросшиватель пластиковая" data-price="1.3">папка скоросшиватель пластиковая</option>
-                  <option value="папка картонная на завязках без скоросшивателя" data-price="1.3">папка картонная на завязках без скоросшивателя</option>
-                  <option value="папка картонная с металлическим скоросшивателем" data-price="1.3">папка картонная с металлическим скоросшивателем</option>
-                  <option value="брошюровка документов на пластиковую пружину" data-price="1.3">брошюровка документов на пластиковую пружину</option>
+                  <option value="папка скоросшиватель пластиковая" data-price="2.5">папка скоросшиватель пластиковая</option>
+                  <option value="папка картонная на завязках без скоросшивателя" data-price="2.5">папка картонная на завязках без скоросшивателя</option>
+                  <option value="папка картонная с металлическим скоросшивателем" data-price="2.5">папка картонная с металлическим скоросшивателем</option>
+                  <option value="брошюровка документов на пластиковую пружину" data-price="2.5">брошюровка документов на пластиковую пружину</option>
                   <option value="без оформления" data-price="0">без оформления</option>
                 </select>
               </div>
@@ -219,16 +219,22 @@
                 <input type="text" hidden name="format-selected" id="format-selected">
                 <select class="" name="format" id="format">
                   <option value="none" selected>Формат печати</option>
-                  <option value="A1" data-black="2" data-colored="3">A1</option>
-                  <option value="A2" data-black="1.5" data-colored="2.5">A2</option>
-                  <option value="A3" data-black="0.60" data-colored="2">A3</option>
-                  <option value="A4" data-black="0.25" data-colored="0.95">A4</option>
+                  <option value="A1" data-black="2" data-colored="5">A1</option>
+                  <option value="A2" data-black="1.5" data-colored="3.5">A2</option>
+                  <option value="A3" data-black="0.35" data-colored="0.55">A3</option>
+                  <option value="A4" data-black="0.1" data-colored="0.2">A4</option>
                 </select>
               </div>
               <input class="input" type="text" id="comment" name="comment" required="required" placeholder="Введите комментарий к заказу...">
 
+              <input class="input big" type="text" id="address" name="address" required placeholder="Адрес доставки" style="opacity: 0;">
+
             </div>
             <div class="submit">
+              <div class="delivery-wrap flex -j-c-b">
+                <input type="checkbox" id="delivery" class="delivery" data-delivery="3">
+                <label for="delivery">доставка?</label>
+              </div>
               <p>Цена:</p>
               <p class="big-price" id="big-price">0 р</p>
               <input type="text" hidden name="total" id="total">

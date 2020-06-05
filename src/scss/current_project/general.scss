@@ -142,7 +142,7 @@ html {
         @content;
     }
 }
-
+.z-index { z-index: 3 !important; }
 .navigator {
   display: flex;
   width: 133px;
@@ -154,7 +154,7 @@ html {
   position: absolute;
   bottom: 10%;
   left: calc(50% - 68px);
-  z-index: 3;
+  z-index: 0;
   @include _phone-big-vertical {
     display: none;
   }

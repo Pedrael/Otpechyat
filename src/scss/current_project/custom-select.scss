@@ -1,7 +1,6 @@
 /* The container must be positioned relative: */
 .custom-select {
  position: relative;
- margin-bottom: RelativeUnits(30, 0.5);
 }
 
 .custom-select select {
@@ -55,7 +54,11 @@
  top: RelativeUnits(50, 0.8);
  left: 0;
  right: 0;
- z-index: 99;
+ z-index: 4;
+ @include _phone-big-vertical {
+   top: auto;
+   bottom: RelativeUnits(50, 0.8);
+ }
  div {
    padding-left: RelativeUnits(40, 0.8);
    padding-right: RelativeUnits(40, 0.8);
@@ -65,6 +68,11 @@
  }
  border-bottom-left-radius: RelativeUnits(7, 0.5);
  border-bottom-right-radius: RelativeUnits(7, 0.5);
+ @include _phone-big-vertical {
+   border-radius: 0;
+   border-top-left-radius: RelativeUnits(7, 0.5);
+   border-top-right-radius: RelativeUnits(7, 0.5);
+ }
  padding-top: RelativeUnits(15, 0.5);
  padding-bottom: RelativeUnits(15, 0.5);
 }

@@ -1,12 +1,11 @@
 .first {
   .center {
     @include width(1300);
-    max-height: fit-content;
-    max-height: -moz-fit-content;
+    height: fit-content;
+    min-height: 45vh;
     .title {
       position: relative;
-      max-height: fit-content;
-      max-height: -moz-fit-content;
+      min-height: 45vh;
       h2, h3, p {
         white-space: nowrap;
       }

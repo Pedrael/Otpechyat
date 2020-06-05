@@ -19,10 +19,10 @@ try {
     //Server settings
     //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
     $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtp.ethereal.email';                    // Set the SMTP server to send through
+    $mail->Host       = 'mail.otpechat.by';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'burdette.halvorson@ethereal.email';                     // SMTP username
-    $mail->Password   = 'yfxFhCH8xjYqegDJnk';                               // SMTP password
+    $mail->Username   = 'orders@otpechat.by';                     // SMTP username
+    $mail->Password   = '38special';                               // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
     $mail->CharSet = 'UTF-8';
@@ -45,14 +45,16 @@ try {
     '<br>'.'Цветность: '.$_POST['coloring-selected'].
     '<br>'.'Формат: '.$_POST['format-selected'].
     '<br>'.'Клиент: '.$_POST['name'].
-    '<br>'.'Комментарий: '.$_POST['comment'];
+    '<br>'.'Комментарий: '.$_POST['comment'].
+    '<br>'.'Адрес доставки(если есть): '.$_POST['address'];
     $mail->AltBody = 'Количество страниц: '.$_POST['amount'].
     '<br>'.'Тип печати: '.$_POST['type-selected'].
     '<br>'.'Оформление: '.$_POST['styling-selected'].
     '<br>'.'Цветность: '.$_POST['coloring-selected'].
     '<br>'.'Формат: '.$_POST['format-selected'].
     '<br>'.'Клиент: '.$_POST['name'].
-    '<br>'.'Комментарий: '.$_POST['comment'];
+    '<br>'.'Комментарий: '.$_POST['comment'].
+    '<br>'.'Адрес доставки(если есть): '.$_POST['address'];
 
     $mail->send();
     //echo 'Message has been sent';
