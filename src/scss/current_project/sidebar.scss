@@ -111,36 +111,6 @@
   p { display: none; }
 }
 
-.navigator {
-  display: flex;
-  width: 133px;
-  height: 30px;
-  align-items: center;
-  justify-content: space-around;
-  background: $black;
-  border-radius: 15px;
-  position: absolute;
-  bottom: 10%;
-  left: calc(50% - 68px);
-  z-index: 10;
-  @include _phone-big-vertical {
-    display: none;
-  }
-  i {
-    color: $white;
-    font-size: 14px;
-    &:hover {
-      color: $accent-1-color;
-    }
-  }
-  .square {
-    width: 11px;
-    height: 11px;
-    border-radius: 2px;
-    background: $white;
-  }
-}
-
 .header {
   position: absolute;
   top: 0;
