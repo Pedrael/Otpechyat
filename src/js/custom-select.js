@@ -104,6 +104,7 @@ document.addEventListener("click", closeAllSelect);
 var amount_selected = document.getElementById('amount')
 var address_input = document.getElementById('address')
 var delivery_selected = document.getElementById('delivery')
+var delivery_label = document.getElementById('delivery-label')
 var styling_selected = document.getElementById('styling-selected')
 var coloring_selected = document.getElementById('coloring-selected')
 var format_selected = document.getElementById('format-selected')
@@ -158,11 +159,18 @@ function countPrice() {
   })
   if(delivery_selected.checked) {
     address_input.style.opacity = '1'
+    address_input.required = true
+    address_input.disabled = false
+    delivery_label.innerHTML = 'доставка<br>включена'
     delivery_scaler = delivery_selected.dataset.delivery
+    delivery_selected
   }
   else {
     address_input.style.opacity = '0'
     delivery_scaler = 0
+    address_input.required = false
+    delivery_label.innerHTML = 'доставка<br>отключена'
+    address_input.disabled = true
   }
   console.log(delivery_selected.dataset.delivery, n)
 

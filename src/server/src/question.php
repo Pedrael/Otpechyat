@@ -19,16 +19,18 @@ try {
     //Server settings
     //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
     $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtp.ethereal.email';                    // Set the SMTP server to send through
+    $mail->Host       = 'mail.otpechat.by';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'burdette.halvorson@ethereal.email';                     // SMTP username
-    $mail->Password   = 'yfxFhCH8xjYqegDJnk';                               // SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+    $mail->Username   = 'orders@otpechat.by';                     // SMTP username
+    $mail->Password   = 'ckj;ysqgfhjkmrjnjhsqybrnjytdpkjvftn';                               // SMTP password
+    //$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+    $mail->SMTPSecure = false;
+    $mail->SMTPAutoTLS = false;
+    $mail->Port       = 25;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
     $mail->CharSet = 'UTF-8';
     //Recipients
-    $mail->setFrom('burdette.halvorson@ethereal.email', 'Mailer');
-    $mail->addAddress('burdette.halvorson@ethereal.email', 'Joe User');     // Add a recipient
+    $mail->setFrom('orders@otpechat.by', 'From');
+    $mail->addAddress('orders@otpechat.by', 'To');    // Add a recipient
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML

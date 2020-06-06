@@ -92,8 +92,12 @@
         line-height: normal;
         margin-bottom: auto;
         align-items: center;
+        input { display: none; }
         label {
           @include FontLineSize(0.5, 0.5, 0.1, 20, 10);
+          font-weight: 400;
+          color: $article-color;
+          text-align: center;
         }
       }
       p {

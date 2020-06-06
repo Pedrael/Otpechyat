@@ -225,15 +225,15 @@
                   <option value="A4" data-black="0.1" data-colored="0.2">A4</option>
                 </select>
               </div>
-              <input class="input" type="text" id="comment" name="comment" required="required" placeholder="Введите комментарий к заказу...">
+              <input class="input" type="text" id="comment" name="comment" placeholder="Введите комментарий к заказу...">
 
-              <input class="input big" type="text" id="address" name="address" required placeholder="Адрес доставки" style="opacity: 0;">
+              <input class="input big" type="text" id="address" name="address" required placeholder="Адрес доставки" style="opacity: 0;" disabled>
 
             </div>
             <div class="submit">
               <div class="delivery-wrap flex -j-c-b">
+                <label for="delivery" id="delivery-label" class="custom-button">доставка<br>отключена</label>
                 <input type="checkbox" id="delivery" class="delivery" data-delivery="3">
-                <label for="delivery">доставка?</label>
               </div>
               <p>Цена:</p>
               <p class="big-price" id="big-price">0 р</p>

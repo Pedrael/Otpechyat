@@ -22,13 +22,15 @@ try {
     $mail->Host       = 'mail.otpechat.by';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'orders@otpechat.by';                     // SMTP username
-    $mail->Password   = '38special';                               // SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+    $mail->Password   = 'ckj;ysqgfhjkmrjnjhsqybrnjytdpkjvftn';                               // SMTP password
+    //$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+    $mail->SMTPSecure = false;
+    $mail->SMTPAutoTLS = false;
+    $mail->Port       = 25;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
     $mail->CharSet = 'UTF-8';
     //Recipients
-    $mail->setFrom('burdette.halvorson@ethereal.email', 'Mailer');
-    $mail->addAddress('burdette.halvorson@ethereal.email', 'Joe User');     // Add a recipient
+    $mail->setFrom('orders@otpechat.by', 'From');
+    $mail->addAddress('orders@otpechat.by', 'To');     // Add a recipient
 
     // Attachments
     if (isset($_FILES['uploaded_file']) && $_FILES['uploaded_file']['error'] == UPLOAD_ERR_OK) {
