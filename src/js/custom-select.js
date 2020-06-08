@@ -175,7 +175,7 @@ function countPrice() {
   console.log(delivery_selected.dataset.delivery, n)
 
     if(colored != undefined && sides != undefined && format_price != undefined && n != undefined) {
-      price += Math.round((( format_price * n ) + styling_price + (n * delivery_scaler)) * 100)/100
+      price += Math.round((( format_price * n ) + styling_price + (delivery_scaler)) * 100)/100
     }
     //console.log(format_price, n, styling_price)
 
