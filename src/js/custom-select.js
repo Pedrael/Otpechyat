@@ -124,7 +124,7 @@ function countPrice() {
   var colored
   var sides
   var format_price
-  var styling_price
+  var styling_price = 0
   var delivery_scaler = 0
   var n = parseInt(amount_selected.value)
   if(isNaN(n)) n = 0
@@ -175,7 +175,7 @@ function countPrice() {
   console.log(delivery_selected.dataset.delivery, n)
 
     if(colored != undefined && sides != undefined && format_price != undefined && n != undefined) {
-      price += Math.round((( format_price * n ) + styling_price + (delivery_scaler)) * 100)/100
+      price += Math.round((( format_price * n ) + styling_price + parseInt(delivery_scaler)) * 100)/100
     }
     //console.log(format_price, n, styling_price)
 
